@@ -1,324 +1,349 @@
 
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Sumed Chalakh | Student Portfolio</title>
-    <link rel="stylesheet" href="./style.css">
-  </head>
-  <body>
-    <!-- Skip link for accessibility -->
-    <a class="skip-link" href="#main-content">Skip to content</a>
 
-    <!-- Header / Navbar -->
-    <header class="site-header" id="top">
-      <nav class="navbar">
-        <div class="logo">Sumed Chalakh</div>
-        <button class="nav-toggle" aria-expanded="false" aria-controls="nav-menu">
-          <span class="sr-only">Toggle navigation</span>
-          <span class="bar"></span>
-          <span class="bar"></span>
-          <span class="bar"></span>
-        </button>
-        <div class="nav-links" id="nav-menu">
-          <a href="#about">About</a>
-          <a href="#skills">Skills</a>
-          <a href="#projects">Projects</a>
-          <a href="#experience">Experience</a>
-          <a href="#contact">Contact</a>
-        </div>
-        <button class="theme-toggle" id="theme-toggle" aria-label="Toggle light and dark mode">
-          <span class="theme-icon" aria-hidden="true">🌙</span>
-        </button>
-      </nav>
-    </header>
+### 1. HERO SECTION
 
-    <main id="main-content">
-      <!-- Hero -->
-      <section class="hero section" aria-labelledby="hero-title">
-        <div class="hero-content">
-          <p class="eyebrow">Hello, I’m</p>
-          <h1 id="hero-title">Sumed K.</h1>
-          <p class="role">Final-year Engineering Student | Aspiring Data Scientist</p>
-          <p class="tagline">
-            Building intelligent, human-centered products with machine learning, analytics, and clean
-            code.
-          </p>
-          <div class="hero-actions">
-            <a class="btn primary" href="#projects">View Projects</a>
-            <a class="btn ghost" href="#contact">Contact Me</a>
-          </div>
-          <div class="hero-meta">
-            <div>
-              <span class="meta-label">Location</span>
-              <span class="meta-value">Nagpur, India</span>
-            </div>
-            <div>
-              <span class="meta-label">Focus</span>
-              <span class="meta-value">Python • Data Analysis • Machine Learning</span>
-            </div>
-            <div>
-              <span class="meta-label">Status</span>
-              <span class="meta-value">Currently pursuing internships & practical projects</span>
-            </div>
-          </div>
-        </div>
-        <div class="hero-card">
-          <div class="status-pill">Currently Learning</div>
-          <h2>Data Science & Machine Learning Fundamentals</h2>
-          <p>
-            Gaining hands-on experience by applying Python, data analysis,
-            and machine learning techniques in internships and project-based learning.
-          </p>
-          <div class="hero-stack">
-            <span>Python</span>
-            <span>TensorFlow</span>
-            <span>FastAPI</span>
-            <span>Docker</span>
-            <span>Pandas</span>
-            <span>NumPy</span>
-          </div>
-        </div>
-      </section>
+**Change from:**
+```html
+<h1 id="hero-title">Sumed K.</h1>
+<p class="role">Final-year Engineering Student | Aspiring Data Scientist</p>
+```
 
-      <!-- About -->
-      <section class="section about" id="about">
-        <div class="section-header">
-          <h2>About Me</h2>
-          <p>A final-year engineering student exploring data science and analytics.</p>
-        </div>
-        <div class="about-grid">
-          <div class="about-card">
-            <h3>Short Bio</h3>
-            <p>
-              I am a data science intern with hands-on experience working on data analysis and machine learning projects using Python.
-              I enjoy transforming raw data into meaningful insights that support decision-making 
-Alongside my academic journey, I have been involved in internships and practical projects where I apply tools like Pandas, NumPy,
-              and basic machine learning models to solve real-world problems and continuously improve my technical skills.
+**Change to:**
+```html
+<h1 id="hero-title">Sumed Chalakh</h1>
+<p class="role">Junior Data Scientist | ML & Analytics Specialist</p>
+```
 
-            </p>
-            <p>
-              I’ve worked on predictive analytics, computer vision, and automation projects, often
-              collaborating with cross-functional teams to ship real-world solutions.
-            </p>
-          </div>
-          <div class="about-card">
-            <h3>Skills Overview</h3>
-            <ul class="overview-list">
-              <li>Machine Learning &amp; Statistical Modeling</li>
-              <li>Data Visualization &amp; Storytelling</li>
-              <li>Python Development &amp; Automation</li>
-              <li>Cloud &amp; Deployment Fundamentals</li>
-            </ul>
-          </div>
-        </div>
-      </section>
+**Change tagline from:**
+```html
+<p class="tagline">Building intelligent, human-centered products with machine learning, analytics, and clean code.</p>
+```
 
-      <!-- Skills -->
-      <section class="section skills" id="skills">
-        <div class="section-header">
-          <h2>Technical Skills</h2>
-          <p>Core tools and technologies I use to deliver data science solutions.</p>
-        </div>
-        <div class="skills-grid">
-          <div class="skill-card">
-            <h3>Languages</h3>
-            <div class="skill-item">
-              <div class="skill-label">
-                <span>Python</span>
-                <span>90%</span>
-              </div>
-              <div class="progress">
-                <div class="progress-bar" style="--progress: 90%"></div>
-              </div>
-            </div>
-            <div class="skill-item">
-              <div class="skill-label">
-                <span>SQL</span>
-                <span>80%</span>
-              </div>
-              <div class="progress">
-                <div class="progress-bar" style="--progress: 80%"></div>
-              </div>
-            </div>
-            <div class="skill-item">
-              <div class="skill-label">
-                <span>JavaScript</span>
-                <span>65%</span>
-              </div>
-              <div class="progress">
-                <div class="progress-bar" style="--progress: 65%"></div>
-              </div>
-            </div>
-          </div>
-          <div class="skill-card">
-            <h3>Frameworks</h3>
-            <div class="pill-grid">
-              <span>Scikit-learn</span>
-              <span>TensorFlow</span>
-              <span>PyTorch</span>
-              <span>FastAPI</span>
-              <span>Pandas</span>
-              <span>NumPy</span>
-            </div>
-          </div>
-          <div class="skill-card">
-            <h3>Tools</h3>
-            <div class="pill-grid">
-              <span>Jupyter</span>
-              <span>Git &amp; GitHub</span>
-              <span>Docker</span>
-              <span>Power BI</span>
-            </div>
-          </div>
-        </div>
-      </section>
+**Change to:**
+```html
+<p class="tagline">Building intelligent data solutions with Python, machine learning, and production-grade APIs. Specialized in predictive modeling, data visualization, and real-world problem-solving.</p>
+```
 
-      <!-- Projects -->
-      <section class="section projects" id="projects">
-        <div class="section-header">
-          <h2>Featured Projects</h2>
-          <p>Selected work that demonstrates my strengths in data science and engineering.</p>
-        </div>
-        <div class="projects-grid">
-          <article class="project-card">
-            <h3>Construction Price Predictor</h3>
-            <p>
-              A project that predicts future prices of construction materials (like cement, steel, sand) using Machine Learning.
-            </p>
-            <div class="tech-stack">Python • XGBoost • Power BI</div>
-            <div class="card-actions">
-              <a class="btn small" href="#">GitHub</a>
-            </div>
-          </article>
-          <article class="project-card">
-            <h3>Vision-Based Quality Control</h3>
-            <p>
-              Designed a CNN pipeline for defect detection, reducing manual inspection time by 45%.
-            </p>
-            <div class="tech-stack">TensorFlow • OpenCV • Docker</div>
-            <div class="card-actions">
-              <a class="btn small" href="#">GitHub</a>
-              <a class="btn small ghost" href="#">Live Demo</a>
-            </div>
-          </article>
-          <article class="project-card">
-            <h3>Smart Energy Forecasting</h3>
-            <p>
-              Built time-series forecasting models to predict energy demand and optimize resource
-              allocation.
-            </p>
-            <div class="tech-stack">Prophet • Python • Power BI</div>
-            <div class="card-actions">
-              <a class="btn small" href="#">GitHub</a>
-              <a class="btn small ghost" href="#">Live Demo</a>
-            </div>
-          </article>
-        </div>
-      </section>
+### 2. HERO META INFO
 
-      <!-- Experience / Education -->
-      <section class="section experience" id="experience">
-        <div class="section-header">
-          <h2>Experience &amp; Education</h2>
-          <p>Milestones that shaped my data science journey.</p>
-        </div>
-        <div class="timeline">
-          <div class="timeline-item">
-            <div class="timeline-dot"></div>
-            <div class="timeline-content">
-              <h3>Data Science Intern</h3>
-              <span class="timeline-meta">Zaalima Developement Pvt. Ltd. • 2026</span>
-              <p>Automated reporting pipelines and created ML prototypes for customer analytics.</p>
-            </div>
-          </div>
-          <div class="timeline-item">
-            <div class="timeline-dot"></div>
-            <div class="timeline-content">
-              <h3>B.Tech in Computer Science (Data Science)</h3>
-              <span class="timeline-meta">JD College of Engineering, Nagpur • 2022 - 2026</span>
-              <p>Coursework in ML, statistics, data engineering, and cloud computing.</p>
-            </div>
-          </div>
-          <div class="timeline-item">
-            <div class="timeline-dot"></div>
-            <div class="timeline-content">
-              <h3>Research Assistant</h3>
-              <span class="timeline-meta">AI Lab • 2023</span>
-              <p>Explored explainable AI methods for healthcare prediction models.</p>
-            </div>
-          </div>
-        </div>
-      </section>
+**Update to:**
+```html
+<div class="hero-meta">
+  <div>
+    <span class="meta-label">Location</span>
+    <span class="meta-value">Nagpur, Maharashtra</span>
+  </div>
+  <div>
+    <span class="meta-label">Focus</span>
+    <span class="meta-value">ML Pipelines • Data Analytics • Production APIs</span>
+  </div>
+  <div>
+    <span class="meta-label">Status</span>
+    <span class="meta-value">Junior Data Scientist | Open to opportunities</span>
+  </div>
+</div>
+```
 
-      <!-- Contact -->
-      <section class="section contact" id="contact">
-        <div class="section-header">
-          <h2>Let’s Connect</h2>
-          <p>Have a project or opportunity? Let’s talk!</p>
-        </div>
-        <div class="contact-grid">
-          <form class="contact-form" aria-label="Contact form">
-            <label>
-              Name
-              <input type="text" name="name" placeholder="Your name" required />
-            </label>
-            <label>
-              Email
-              <input type="email" name="email" placeholder="your@email.com" required />
-            </label>
-            <label>
-              Message
-              <textarea name="message" rows="4" placeholder="Tell me about your project" required></textarea>
-            </label>
-            <button class="btn primary" type="submit">Send Message</button>
-          </form>
-          <div class="contact-card">
-            <h3>Find me online</h3>
-            <p>
-              I’m active in the data science community—reach out for collaboration or mentorship.
-            </p>
-            <div class="social-links">
-              <a href="#" aria-label="GitHub">
-                <svg viewBox="0 0 24 24" aria-hidden="true">
-                  <path
-                    d="M12 2C6.48 2 2 6.58 2 12.26c0 4.5 2.87 8.31 6.84 9.65.5.1.68-.22.68-.49 0-.24-.01-.86-.01-1.69-2.78.62-3.37-1.36-3.37-1.36-.46-1.17-1.11-1.48-1.11-1.48-.9-.64.07-.63.07-.63 1 .07 1.53 1.05 1.53 1.05.9 1.58 2.36 1.12 2.94.85.09-.66.35-1.12.64-1.38-2.22-.26-4.56-1.13-4.56-5.03 0-1.11.39-2.02 1.02-2.73-.1-.26-.44-1.33.1-2.77 0 0 .84-.27 2.75 1.04.8-.23 1.66-.34 2.52-.34.86 0 1.72.11 2.52.34 1.91-1.31 2.75-1.04 2.75-1.04.54 1.44.2 2.51.1 2.77.64.71 1.02 1.62 1.02 2.73 0 3.91-2.35 4.77-4.58 5.02.36.32.69.93.69 1.89 0 1.36-.01 2.45-.01 2.78 0 .27.18.59.69.49A10.06 10.06 0 0 0 22 12.26C22 6.58 17.52 2 12 2z"
-                  />
-                </svg>
-              </a>
-              <a href="#" aria-label="LinkedIn">
-                <svg viewBox="0 0 24 24" aria-hidden="true">
-                  <path
-                    d="M4.98 3.5A2.5 2.5 0 1 0 5 8.5a2.5 2.5 0 0 0-.02-5zM3 9h4v12H3zM9 9h3.8v1.7h.05c.53-1 1.83-2.05 3.77-2.05 4.03 0 4.78 2.67 4.78 6.15V21h-4v-5.3c0-1.27-.02-2.9-1.77-2.9-1.78 0-2.05 1.38-2.05 2.8V21H9z"
-                  />
-                </svg>
-              </a>
-              <a href="mailto:hello@sumed.dev" aria-label="Email">
-                <svg viewBox="0 0 24 24" aria-hidden="true">
-                  <path
-                    d="M20 4H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2zm0 4-8 5-8-5V6l8 5 8-5z"
-                  />
-                </svg>
-              </a>
-            </div>
-            <div class="contact-details">
-              <p><strong>Email:</strong> sumedchalakh528@gmail.com</p>
-              <p><strong>Phone:</strong> +91 8329935523</p>
-              <p><strong>Availability:</strong> Mon - Fri, 9am - 6pm IST</p>
-            </div>
-          </div>
-        </div>
-      </section>
-    </main>
+### 3. HERO CARD
 
-    <!-- Footer -->
-    <footer class="footer">
-      <p>&copy; 2025 Sumed Chalakh All rights reserved.</p>
-      <a class="back-to-top" href="#top">Back to top ↑</a>
-    </footer>
-    <script src="./script.js"></script>
-  </body>
-</html>
+**Change from:**
+```html
+<div class="status-pill">Currently Learning</div>
+<h2>Data Science & Machine Learning Fundamentals</h2>
+<p>Gaining hands-on experience by applying Python, data analysis, and machine learning techniques in internships and project-based learning.</p>
+```
 
+**Change to:**
+```html
+<div class="status-pill">Currently Available</div>
+<h2>Production-Grade Data Science</h2>
+<p>Building end-to-end ML pipelines from data ingestion to model deployment. Expertise in predictive maintenance, demand forecasting, and explainable AI solutions.</p>
+```
+
+**Update tech stack:**
+```html
+<div class="hero-stack">
+  <span>Python</span>
+  <span>TensorFlow</span>
+  <span>Scikit-learn</span>
+  <span>Flask/FastAPI</span>
+  <span>Power BI</span>
+  <span>Docker</span>
+</div>
+```
+
+### 4. ABOUT SECTION
+
+**Update section header:**
+```html
+<h2>About Me</h2>
+<p>Junior Data Scientist with proven expertise in ML pipelines and production deployment.</p>
+```
+
+**First card - Professional Background:**
+```html
+<h3>Professional Background</h3>
+<p>I'm a junior data scientist with hands-on experience in end-to-end ML pipelines, REST API development, and high-scale data analytics. I specialize in building production-ready solutions that transform raw data into actionable business insights.</p>
+<p>My background combines Civil Engineering with advanced data science skills. I'm passionate about explainable AI, data ethics, and building solutions that create real-world impact.</p>
+```
+
+**Second card - Expertise:**
+```html
+<h3>Expertise</h3>
+<ul class="overview-list">
+  <li>End-to-end ML Pipeline Development</li>
+  <li>Predictive Modeling & Statistical Analysis</li>
+  <li>Production API Development & Deployment</li>
+  <li>High-Scale Data Analytics & BI Dashboards</li>
+  <li>CNN/RNN Deep Learning Architectures</li>
+  <li>Model Explainability with SHAP</li>
+</ul>
+```
+
+### 5. SKILLS SECTION
+
+**Update section header:**
+```html
+<h2>Technical Skills</h2>
+<p>Languages, frameworks, and tools I use for production data science.</p>
+```
+
+**Replace all 3 skill cards with:**
+
+**Card 1 - Languages & Data:**
+```html
+<div class="skill-card">
+  <h3>Languages & Data</h3>
+  <div class="skill-item">
+    <div class="skill-label"><span>Python</span><span>Advanced</span></div>
+    <div class="progress"><div class="progress-bar" style="--progress: 95%"></div></div>
+  </div>
+  <div class="skill-item">
+    <div class="skill-label"><span>SQL</span><span>Intermediate</span></div>
+    <div class="progress"><div class="progress-bar" style="--progress: 80%"></div></div>
+  </div>
+  <div class="skill-item">
+    <div class="skill-label"><span>Statistics & Analysis</span><span>Advanced</span></div>
+    <div class="progress"><div class="progress-bar" style="--progress: 85%"></div></div>
+  </div>
+</div>
+```
+
+**Card 2 - ML & Deep Learning:**
+```html
+<div class="skill-card">
+  <h3>ML & Deep Learning</h3>
+  <div class="pill-grid">
+    <span>Scikit-learn</span>
+    <span>TensorFlow/Keras</span>
+    <span>CNN</span>
+    <span>RNN</span>
+    <span>Linear Regression</span>
+    <span>Classification</span>
+    <span>Feature Engineering</span>
+    <span>SHAP Explainability</span>
+  </div>
+</div>
+```
+
+**Card 3 - Data & Visualization:**
+```html
+<div class="skill-card">
+  <h3>Data & Visualization</h3>
+  <div class="pill-grid">
+    <span>Pandas</span>
+    <span>NumPy</span>
+    <span>Matplotlib</span>
+    <span>Seaborn</span>
+    <span>Power BI</span>
+    <span>Streamlit</span>
+    <span>EDA</span>
+    <span>KPI Design</span>
+  </div>
+</div>
+```
+
+**Card 4 - Development & Deployment:**
+```html
+<div class="skill-card">
+  <h3>Development & Deployment</h3>
+  <div class="pill-grid">
+    <span>Flask</span>
+    <span>REST API</span>
+    <span>Docker</span>
+    <span>CI/CD (GitHub Actions)</span>
+    <span>Git</span>
+    <span>Jupyter</span>
+    <span>Google Colab</span>
+    <span>Agile</span>
+  </div>
+</div>
+```
+
+### 6. PROJECTS SECTION
+
+**Update header:**
+```html
+<h2>Featured Projects</h2>
+<p>Production-grade solutions showcasing ML expertise and real-world impact.</p>
+```
+
+**Project 1 - FactoryGuard AI (FEATURED):**
+```html
+<article class="project-card featured">
+  <div class="project-badge">Featured</div>
+  <h3>FactoryGuard AI</h3>
+  <p class="project-subtitle">Predictive Maintenance API | Jan 2026 - Feb 2026</p>
+  <p>Production-ready ML REST API for real-time equipment failure risk scoring from 3 sensor inputs (temperature, vibration, pressure). Achieved 18.88ms average inference latency with 0% error rate.</p>
+  <div class="project-highlights">
+    <span>📊 SHAP explainability endpoint</span>
+    <span>🔐 Key authentication & rate limiting</span>
+    <span>🐳 Docker containerization</span>
+    <span>⚡ CI/CD with GitHub Actions</span>
+  </div>
+  <div class="tech-stack">Python • Flask • Scikit-learn • SHAP • Docker • GitHub Actions</div>
+  <div class="card-actions">
+    <a class="btn small" href="https://github.com/sumedChalakh/factoryguard-ai" target="_blank">GitHub Repository</a>
+    <a class="btn small ghost" href="#contact">Learn More</a>
+  </div>
+</article>
+```
+
+**Project 2 - Aadhaar Dashboard:**
+```html
+<article class="project-card">
+  <h3>Aadhaar Enrollment & Biometric Dashboard</h3>
+  <p class="project-subtitle">Power BI Analytics | Jan 2026</p>
+  <p>High-scale Power BI dashboard processing 5M+ enrollments and 68M+ biometric records. Engineered 10+ custom KPIs with DAX for demographic analysis and enrollment efficiency tracking.</p>
+  <div class="project-highlights">
+    <span>📈 68M+ records processed</span>
+    <span>📍 Multi-level geographic filtering</span>
+    <span>🎯 10+ custom KPIs</span>
+    <span>🔍 Advanced data cleaning</span>
+  </div>
+  <div class="tech-stack">Power BI • DAX • Data Cleaning • KPI Design</div>
+  <div class="card-actions">
+    <a class="btn small ghost" href="#contact">View Case Study</a>
+  </div>
+</article>
+```
+
+**Project 3 - Construction Price Predictor:**
+```html
+<article class="project-card">
+  <h3>Construction Price Predictor</h3>
+  <p class="project-subtitle">ML Pipeline & Web App | Sep 2025 - Oct 2025</p>
+  <p>End-to-end ML pipeline forecasting prices for 5 key construction materials using Linear Regression. Interactive Streamlit application for real-time visualizations and trend analysis.</p>
+  <div class="project-highlights">
+    <span>📦 5 material price forecasting</span>
+    <span>🎨 Interactive Streamlit UI</span>
+    <span>📊 Correlation & volatility analysis</span>
+    <span>📈 MAE & RMSE optimization</span>
+  </div>
+  <div class="tech-stack">Python • Scikit-learn • Streamlit • Pandas • NumPy</div>
+  <div class="card-actions">
+    <a class="btn small ghost" href="#contact">Project Details</a>
+  </div>
+</article>
+```
+
+### 7. EXPERIENCE SECTION
+
+**Update header:**
+```html
+<h2>Experience & Certifications</h2>
+<p>Professional journey and continuous learning.</p>
+```
+
+**Timeline items:**
+```html
+<div class="timeline-item">
+  <div class="timeline-dot"></div>
+  <div class="timeline-content">
+    <h3>Data Science Intern</h3>
+    <span class="timeline-meta">Zaalima Development Pvt. Ltd. (Remote) • Jan 2026 - Apr 2026</span>
+    <p>Implemented end-to-end EDA and ML workflows using Python and SQL. Developed and tuned predictive models optimizing MAE/RMSE through rigorous data cleaning and feature engineering. Executed automated data transformation pipelines in an agile, remote environment.</p>
+  </div>
+</div>
+
+<div class="timeline-item">
+  <div class="timeline-dot"></div>
+  <div class="timeline-content">
+    <h3>AI-ML Virtual Intern</h3>
+    <span class="timeline-meta">Google (via AICTE & EduSkills) • Jun 2025 - Sep 2025</span>
+    <p>Engineered CNN and RNN architectures for supervised/unsupervised learning using TensorFlow and Keras. Optimized deep learning performance via Precision, Recall, and F1-score evaluation. Gained practical exposure to full ML lifecycle from data ingestion through model iteration.</p>
+  </div>
+</div>
+
+<div class="timeline-item">
+  <div class="timeline-dot"></div>
+  <div class="timeline-content">
+    <h3>B.Tech in Civil Engineering</h3>
+    <span class="timeline-meta">JD College of Engineering, Nagpur • Graduated 2026 (CGPA: 8.2/10)</span>
+    <p>Focus on Statistical Analysis, Quantitative Methods, and Data-Driven Infrastructure Planning. Combined engineering fundamentals with advanced data science specialization.</p>
+  </div>
+</div>
+```
+
+**Add certifications section after timeline:**
+```html
+<div class="certifications-grid">
+  <div class="cert-card">
+    <h4>Google AI-ML Virtual Internship</h4>
+    <p>AICTE & EduSkills Foundation • 2025</p>
+  </div>
+  <div class="cert-card">
+    <h4>Python Full Stack Development</h4>
+    <p>EduSkills Academy • 2025</p>
+  </div>
+  <div class="cert-card">
+    <h4>Power BI Course</h4>
+    <p>Skillcourse • 2026</p>
+  </div>
+  <div class="cert-card">
+    <h4>Enhancing Soft Skills & Personality</h4>
+    <p>NPTEL • 2025</p>
+  </div>
+</div>
+```
+
+### 8. CONTACT SECTION
+
+**Update header:**
+```html
+<h2>Let's Connect</h2>
+<p>Interested in collaboration, opportunities, or just want to chat about data science?</p>
+```
+
+**Update contact card:**
+```html
+<div class="contact-card">
+  <h3>Reach Out</h3>
+  <p>I'm actively seeking data science opportunities and collaborations. Let's connect and build something impactful together.</p>
+  <!-- Keep social links as is -->
+  <div class="contact-details">
+    <p><strong>Email:</strong> <a href="mailto:sumedchalakh528@gmail.com">sumedchalakh528@gmail.com</a></p>
+    <p><strong>Phone:</strong> +91 8329935523</p>
+    <p><strong>Location:</strong> Nagpur, Maharashtra, India</p>
+    <p><strong>Availability:</strong> Flexible for projects & opportunities</p>
+  </div>
+</div>
+```
+
+**Update social links:**
+```html
+<a href="https://github.com/sumedChalakh" target="_blank" aria-label="GitHub"><!-- GitHub SVG --></a>
+<a href="https://www.linkedin.com/in/sumed-chalakh-888986526" target="_blank" aria-label="LinkedIn"><!-- LinkedIn SVG --></a>
+<a href="mailto:sumedchalakh528@gmail.com" aria-label="Email"><!-- Email SVG --></a>
+```
+
+### 9. FOOTER
+
+**Update to:**
+```html
+<footer class="footer">
+  <p>&copy; 2025 Sumed Chalakh. All rights reserved.</p>
+  <a class="back-to-top" href="#top">Back to top ↑</a>
+</footer>
+```
 
