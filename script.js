@@ -43,20 +43,93 @@ document.querySelectorAll('.card').forEach(card=>{
   });
 });
 
-/* ===== Hero photo subtle tilt ===== */
-const heroPhoto = document.querySelector('.hero-photo');
-if(heroPhoto && !reduceMotion){
-  const wrap = document.querySelector('.hero-photo-wrap');
-  wrap.addEventListener('mousemove', (e)=>{
-    const r = wrap.getBoundingClientRect();
-    const cx = (e.clientX - r.left - r.width/2) / r.width;
-    const cy = (e.clientY - r.top - r.height/2) / r.height;
-    heroPhoto.style.transform = `rotateY(${cx*12}deg) rotateX(${-cy*12}deg)`;
-  });
-  wrap.addEventListener('mouseleave', ()=>{
-    heroPhoto.style.transform = 'rotateY(0) rotateX(0)';
-  });
-}
+/* ===== ID card on lanyard — draggable pendulum ===== */
+(function initLanyard(){
+  const lanyard = document.getElementById('lanyard');
+  const clip = document.querySelector('.lanyard-clip');
+  if(!lanyard || !clip) return;
+
+  let angle = 0;          // current rotation, degrees
+  let angularVel = 0;      // degrees per frame
+  let dragging = false;
+  let rafId = null;
+  const MAX_ANGLE = 42;
+  const STIFFNESS = 0.06;
+  const DAMPING = 0.90;
+
+  function pivotPoint(){
+    const r = clip.getBoundingClientRect();
+    return { x: r.left + r.width/2, y: r.top + r.height/2 };
+  }
+
+  function angleFromPointer(clientX, clientY){
+    const p = pivotPoint();
+    const dx = clientX - p.x;
+    const dy = clientY - p.y;
+    let deg = Math.atan2(dx, dy) * (180/Math.PI);
+    return Math.max(-MAX_ANGLE, Math.min(MAX_ANGLE, deg));
+  }
+
+  function applyAngle(deg){
+    lanyard.style.transform = `rotate(${deg}deg)`;
+  }
+
+  function stepSpring(){
+    const accel = (-angle * STIFFNESS);
+    angularVel = (angularVel + accel) * DAMPING;
+    angle += angularVel;
+    applyAngle(angle);
+    if(Math.abs(angle) > 0.05 || Math.abs(angularVel) > 0.05){
+      rafId = requestAnimationFrame(stepSpring);
+    } else {
+      angle = 0; angularVel = 0;
+      applyAngle(0);
+      rafId = null;
+    }
+  }
+
+  function onPointerDown(e){
+    if(reduceMotion) return;
+    dragging = true;
+    lanyard.classList.add('dragging');
+    if(rafId){ cancelAnimationFrame(rafId); rafId = null; }
+    lanyard.setPointerCapture && lanyard.setPointerCapture(e.pointerId);
+    e.preventDefault();
+  }
+
+  function onPointerMove(e){
+    if(!dragging) return;
+    const prevAngle = angle;
+    angle = angleFromPointer(e.clientX, e.clientY);
+    angularVel = angle - prevAngle;
+    applyAngle(angle);
+  }
+
+  function onPointerUp(){
+    if(!dragging) return;
+    dragging = false;
+    lanyard.classList.remove('dragging');
+    if(!rafId) rafId = requestAnimationFrame(stepSpring);
+  }
+
+  lanyard.addEventListener('pointerdown', onPointerDown);
+  window.addEventListener('pointermove', onPointerMove);
+  window.addEventListener('pointerup', onPointerUp);
+  window.addEventListener('pointercancel', onPointerUp);
+
+  // gentle idle sway so it reads as "hanging" even before interaction
+  if(!reduceMotion){
+    let t = 0;
+    function idleSway(){
+      if(!dragging && rafId === null){
+        t += 0.012;
+        applyAngle(Math.sin(t) * 2.2);
+      }
+      requestAnimationFrame(idleSway);
+    }
+    requestAnimationFrame(idleSway);
+  }
+})();
 
 /* ===== Three.js hero node-graph ===== */
 (function initHeroGraph(){
